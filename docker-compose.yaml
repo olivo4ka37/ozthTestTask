@@ -1,0 +1,12 @@
+version: '4.2'
+services:
+  postgres:
+    image: postgres
+    restart: on-failure
+    container_name: ozonfintech
+    environment:
+      POSTGRES_DB: "techdb"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "qwerty"
+    ports:
+      - "5030:5432"
