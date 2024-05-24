@@ -79,16 +79,6 @@ func (s *PostgresStore) GetComments(postID int) ([]*model.Comment, error) {
 		return nil, err
 	}
 
-	// Обработка комментариев
-	//for _, comment := range commentMap {
-	//	if comment.ParentID != nil {
-	//		parentComment, ok := commentMap[*comment.ParentID]
-	//		if ok {
-	//			parentComment.Child = append(parentComment.Child, comment)
-	//		}
-	//	}
-	//}
-
 	// Возвращаем только комментарии верхнего уровня
 	var topLevelComments []*model.Comment
 	for _, comment := range commentMap {
